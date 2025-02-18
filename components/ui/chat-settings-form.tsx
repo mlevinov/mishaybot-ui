@@ -117,52 +117,52 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
 
   return (
     <div className="mt-5">
-      <div className="space-y-3">
-        <Label className="flex items-center space-x-1">
-          <div>Temperature:</div>
+      {/*<div className="space-y-3">*/}
+      {/*  <Label className="flex items-center space-x-1">*/}
+      {/*    <div>Temperature:</div>*/}
 
-          <div>{chatSettings.temperature}</div>
-        </Label>
+      {/*    <div>{chatSettings.temperature}</div>*/}
+      {/*  </Label>*/}
 
-        <Slider
-          value={[chatSettings.temperature]}
-          onValueChange={temperature => {
-            onChangeChatSettings({
-              ...chatSettings,
-              temperature: temperature[0]
-            })
-          }}
-          min={MODEL_LIMITS.MIN_TEMPERATURE}
-          max={MODEL_LIMITS.MAX_TEMPERATURE}
-          step={0.01}
-        />
-      </div>
+      {/*  <Slider*/}
+      {/*    value={[chatSettings.temperature]}*/}
+      {/*    onValueChange={temperature => {*/}
+      {/*      onChangeChatSettings({*/}
+      {/*        ...chatSettings,*/}
+      {/*        temperature: temperature[0]*/}
+      {/*      })*/}
+      {/*    }}*/}
+      {/*    min={MODEL_LIMITS.MIN_TEMPERATURE}*/}
+      {/*    max={MODEL_LIMITS.MAX_TEMPERATURE}*/}
+      {/*    step={0.01}*/}
+      {/*  />*/}
+      {/*</div>*/}
 
-      <div className="mt-6 space-y-3">
-        <Label className="flex items-center space-x-1">
-          <div>Context Length:</div>
+      {/*<div className="mt-6 space-y-3">*/}
+      {/*  <Label className="flex items-center space-x-1">*/}
+      {/*    <div>Context Length:</div>*/}
 
-          <div>{chatSettings.contextLength}</div>
-        </Label>
+      {/*    <div>{chatSettings.contextLength}</div>*/}
+      {/*  </Label>*/}
 
-        <Slider
-          value={[chatSettings.contextLength]}
-          onValueChange={contextLength => {
-            onChangeChatSettings({
-              ...chatSettings,
-              contextLength: contextLength[0]
-            })
-          }}
-          min={0}
-          max={
-            isCustomModel
-              ? models.find(model => model.model_id === chatSettings.model)
-                  ?.context_length
-              : MODEL_LIMITS.MAX_CONTEXT_LENGTH
-          }
-          step={1}
-        />
-      </div>
+      {/*  <Slider*/}
+      {/*    value={[chatSettings.contextLength]}*/}
+      {/*    onValueChange={contextLength => {*/}
+      {/*      onChangeChatSettings({*/}
+      {/*        ...chatSettings,*/}
+      {/*        contextLength: contextLength[0]*/}
+      {/*      })*/}
+      {/*    }}*/}
+      {/*    min={0}*/}
+      {/*    max={*/}
+      {/*      isCustomModel*/}
+      {/*        ? models.find(model => model.model_id === chatSettings.model)*/}
+      {/*            ?.context_length*/}
+      {/*        : MODEL_LIMITS.MAX_CONTEXT_LENGTH*/}
+      {/*    }*/}
+      {/*    step={1}*/}
+      {/*  />*/}
+      {/*</div>*/}
 
       <div className="mt-7 flex items-center space-x-2">
         <Checkbox
@@ -192,62 +192,62 @@ const AdvancedContent: FC<AdvancedContentProps> = ({
         )}
       </div>
 
-      <div className="mt-4 flex items-center space-x-2">
-        <Checkbox
-          checked={chatSettings.includeWorkspaceInstructions}
-          onCheckedChange={(value: boolean) =>
-            onChangeChatSettings({
-              ...chatSettings,
-              includeWorkspaceInstructions: value
-            })
-          }
-        />
+      {/*<div className="mt-4 flex items-center space-x-2">*/}
+      {/*  <Checkbox*/}
+      {/*    checked={chatSettings.includeWorkspaceInstructions}*/}
+      {/*    onCheckedChange={(value: boolean) =>*/}
+      {/*      onChangeChatSettings({*/}
+      {/*        ...chatSettings,*/}
+      {/*        includeWorkspaceInstructions: value*/}
+      {/*      })*/}
+      {/*    }*/}
+      {/*  />*/}
 
-        <Label>Chats Include Workspace Instructions</Label>
+      {/*  <Label>Chats Include Workspace Instructions</Label>*/}
 
-        {showTooltip && (
-          <WithTooltip
-            delayDuration={0}
-            display={
-              <div className="w-[400px] p-3">
-                {selectedWorkspace?.instructions ||
-                  "No workspace instructions."}
-              </div>
-            }
-            trigger={
-              <IconInfoCircle className="cursor-hover:opacity-50" size={16} />
-            }
-          />
-        )}
-      </div>
+      {/*  {showTooltip && (*/}
+      {/*    <WithTooltip*/}
+      {/*      delayDuration={0}*/}
+      {/*      display={*/}
+      {/*        <div className="w-[400px] p-3">*/}
+      {/*          {selectedWorkspace?.instructions ||*/}
+      {/*            "No workspace instructions."}*/}
+      {/*        </div>*/}
+      {/*      }*/}
+      {/*      trigger={*/}
+      {/*        <IconInfoCircle className="cursor-hover:opacity-50" size={16} />*/}
+      {/*      }*/}
+      {/*    />*/}
+      {/*  )}*/}
+      {/*</div>*/}
 
-      <div className="mt-5">
-        <Label>Embeddings Provider</Label>
+      {/*<div className="mt-5">*/}
+      {/*  <Label>Embeddings Provider</Label>*/}
 
-        <Select
-          value={chatSettings.embeddingsProvider}
-          onValueChange={(embeddingsProvider: "openai" | "local") => {
-            onChangeChatSettings({
-              ...chatSettings,
-              embeddingsProvider
-            })
-          }}
-        >
-          <SelectTrigger>
-            <SelectValue defaultValue="openai" />
-          </SelectTrigger>
+      {/*  <Select*/}
+      {/*    value={chatSettings.embeddingsProvider}*/}
+      {/*    onValueChange={(embeddingsProvider: "openai" | "local") => {*/}
+      {/*      onChangeChatSettings({*/}
+      {/*        ...chatSettings,*/}
+      {/*        embeddingsProvider*/}
+      {/*      })*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    <SelectTrigger>*/}
+      {/*      <SelectValue defaultValue="openai" />*/}
+      {/*    </SelectTrigger>*/}
 
-          <SelectContent>
-            <SelectItem value="openai">
-              {profile?.use_azure_openai ? "Azure OpenAI" : "OpenAI"}
-            </SelectItem>
+      {/*    <SelectContent>*/}
+      {/*      <SelectItem value="openai">*/}
+      {/*        {profile?.use_azure_openai ? "Azure OpenAI" : "OpenAI"}*/}
+      {/*      </SelectItem>*/}
 
-            {window.location.hostname === "localhost" && (
-              <SelectItem value="local">Local</SelectItem>
-            )}
-          </SelectContent>
-        </Select>
-      </div>
+      {/*      {window.location.hostname === "localhost" && (*/}
+      {/*        <SelectItem value="local">Local</SelectItem>*/}
+      {/*      )}*/}
+      {/*    </SelectContent>*/}
+      {/*  </Select>*/}
+      {/*</div>*/}
     </div>
   )
 }

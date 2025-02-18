@@ -226,39 +226,39 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
                   />
                 </div> */}
 
-                <div className="space-y-1">
-                  <Label>Workspace Image</Label>
+                {/*<div className="space-y-1">*/}
+                {/*  <Label>Workspace Image</Label>*/}
 
-                  <ImagePicker
-                    src={imageLink}
-                    image={selectedImage}
-                    onSrcChange={setImageLink}
-                    onImageChange={setSelectedImage}
-                    width={50}
-                    height={50}
-                  />
-                </div>
+                {/*  <ImagePicker*/}
+                {/*    src={imageLink}*/}
+                {/*    image={selectedImage}*/}
+                {/*    onSrcChange={setImageLink}*/}
+                {/*    onImageChange={setSelectedImage}*/}
+                {/*    width={50}*/}
+                {/*    height={50}*/}
+                {/*  />*/}
+                {/*</div>*/}
               </>
 
-              <div className="space-y-1">
-                <Label>
-                  How would you like the AI to respond in this workspace?
-                </Label>
+              {/*<div className="space-y-1">*/}
+              {/*  <Label>*/}
+              {/*    How would you like the AI to respond in this workspace?*/}
+              {/*  </Label>*/}
 
-                <TextareaAutosize
-                  placeholder="Instructions... (optional)"
-                  value={instructions}
-                  onValueChange={setInstructions}
-                  minRows={5}
-                  maxRows={10}
-                  maxLength={1500}
-                />
+              {/*  <TextareaAutosize*/}
+              {/*    placeholder="Instructions... (optional)"*/}
+              {/*    value={instructions}*/}
+              {/*    onValueChange={setInstructions}*/}
+              {/*    minRows={5}*/}
+              {/*    maxRows={10}*/}
+              {/*    maxLength={1500}*/}
+              {/*  />*/}
 
-                <LimitDisplay
-                  used={instructions.length}
-                  limit={WORKSPACE_INSTRUCTIONS_MAX}
-                />
-              </div>
+              {/*  <LimitDisplay*/}
+              {/*    used={instructions.length}*/}
+              {/*    limit={WORKSPACE_INSTRUCTIONS_MAX}*/}
+              {/*  />*/}
+              {/*</div>*/}
             </TabsContent>
 
             <TabsContent className="mt-5" value="defaults">

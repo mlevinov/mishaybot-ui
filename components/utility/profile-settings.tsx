@@ -295,21 +295,21 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        {profile.image_url ? (
-          <Image
-            className="mt-2 size-[34px] cursor-pointer rounded hover:opacity-50"
-            src={profile.image_url + "?" + new Date().getTime()}
-            height={34}
-            width={34}
-            alt={"Image"}
-          />
-        ) : (
-          <Button size="icon" variant="ghost">
-            <IconUser size={SIDEBAR_ICON_SIZE} />
-          </Button>
-        )}
-      </SheetTrigger>
+      {/*<SheetTrigger asChild>*/}
+      {/*  {profile.image_url ? (*/}
+      {/*    <Image*/}
+      {/*      className="mt-2 size-[34px] cursor-pointer rounded hover:opacity-50"*/}
+      {/*      src={profile.image_url + "?" + new Date().getTime()}*/}
+      {/*      height={34}*/}
+      {/*      width={34}*/}
+      {/*      alt={"Image"}*/}
+      {/*    />*/}
+      {/*  ) : (*/}
+      {/*    <Button size="icon" variant="ghost">*/}
+      {/*      <IconUser size={SIDEBAR_ICON_SIZE} />*/}
+      {/*    </Button>*/}
+      {/*  )}*/}
+      {/*</SheetTrigger>*/}
 
       <SheetContent
         className="flex flex-col justify-between"
@@ -387,18 +387,18 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                 />
               </div>
 
-              <div className="space-y-1">
-                <Label>Profile Image</Label>
+              {/*<div className="space-y-1">*/}
+              {/*  <Label>Profile Image</Label>*/}
 
-                <ImagePicker
-                  src={profileImageSrc}
-                  image={profileImageFile}
-                  height={50}
-                  width={50}
-                  onSrcChange={setProfileImageSrc}
-                  onImageChange={setProfileImageFile}
-                />
-              </div>
+              {/*  <ImagePicker*/}
+              {/*    src={profileImageSrc}*/}
+              {/*    image={profileImageFile}*/}
+              {/*    height={50}*/}
+              {/*    width={50}*/}
+              {/*    onSrcChange={setProfileImageSrc}*/}
+              {/*    onImageChange={setProfileImageFile}*/}
+              {/*  />*/}
+              {/*</div>*/}
 
               <div className="space-y-1">
                 <Label>Chat Display Name</Label>
@@ -731,20 +731,20 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
           <div className="flex items-center space-x-1">
             <ThemeSwitcher />
 
-            <WithTooltip
-              display={
-                <div>
-                  Download Chatbot UI 1.0 data as JSON. Import coming soon!
-                </div>
-              }
-              trigger={
-                <IconFileDownload
-                  className="cursor-pointer hover:opacity-50"
-                  size={32}
-                  onClick={exportLocalStorageAsJSON}
-                />
-              }
-            />
+            {/*<WithTooltip*/}
+            {/*  display={*/}
+            {/*    <div>*/}
+            {/*      Download Chatbot UI 1.0 data as JSON. Import coming soon!*/}
+            {/*    </div>*/}
+            {/*  }*/}
+            {/*  trigger={*/}
+            {/*    <IconFileDownload*/}
+            {/*      className="cursor-pointer hover:opacity-50"*/}
+            {/*      size={32}*/}
+            {/*      onClick={exportLocalStorageAsJSON}*/}
+            {/*    />*/}
+            {/*  }*/}
+            {/*/>*/}
           </div>
 
           <div className="ml-auto space-x-2">

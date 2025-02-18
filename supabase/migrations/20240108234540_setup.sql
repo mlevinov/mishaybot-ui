@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 -- Enable HTTP extension
 create extension http with schema extensions;
 
